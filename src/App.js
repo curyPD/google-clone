@@ -39,8 +39,7 @@ export default function App() {
                 headers: {
                     "X-User-Agent": "desktop",
                     "X-Proxy-Location": "US",
-                    "X-RapidAPI-Key":
-                        "10ffcca468msh85364fb8dd07c3ep16f1f7jsn66704d6c7d23",
+                    "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
                     "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
                 },
             };
@@ -50,7 +49,6 @@ export default function App() {
                 options
             );
             const data = await response.json();
-            console.log(data);
             setSearchData(data);
         } catch (err) {
             console.error(err);
